@@ -1,13 +1,15 @@
 <template>
-  <h1 class="links-title">My links</h1>
+  <h1 class="links-title">
+    My links
+  </h1>
   <section>
     <ul class="links-ul">
-      <li v-for="link in links" class="links-item">
+      <li v-for="link in links" class="links-item" :key="link.url">
         <a class="card" :href="link.url" target="_blank">
           <div class="card-container">
             <div class="card-text">{{ link.title }}</div>
             <div class="card-icon">
-              <img :src="getSVG(link.icon_svg)" alt="icon" />
+              <img :src="getSVG(link.icon_svg)" alt="icon">
             </div>
           </div>
         </a>

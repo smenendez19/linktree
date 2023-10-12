@@ -3,6 +3,6 @@
 </template>
 
 <script setup>
-import LinkTree from './components/LinkTree.vue'
+import LinkTree from '@/components/LinkTree.vue'
 
 </script>

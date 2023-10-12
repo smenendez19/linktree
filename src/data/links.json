@@ -1,0 +1,49 @@
+{
+    "links": [
+        {
+            "title": "Linkedin",
+            "url": "https://www.linkedin.com/in/menendezsantiago/",
+            "icon_svg": "linkedin.svg"
+        },
+        {
+            "title": "Instagram",
+            "url": "https://www.instagram.com/smenendez19/",
+            "icon_svg": "instagram.svg"
+        },
+        {
+            "title": "Twitter",
+            "url": "https://twitter.com/sanm_dev",
+            "icon_svg": "twitter.svg"
+        },
+        {
+            "title": "GitHub",
+            "url": "https://github.com/SantiMenendez19",
+            "icon_svg": "github.svg"
+        },
+        {
+            "title": "LeetCode",
+            "url": "https://leetcode.com/smenendez/",
+            "icon_svg": "leetcode.svg"
+        },
+        {
+            "title": "HackerRank",
+            "url": "https://www.hackerrank.com/smenendez",
+            "icon_svg": "hackerrank.svg"
+        },
+        {
+            "title": "Medium",
+            "url": "https://medium.com/@santiagomenendez",
+            "icon_svg": "medium.svg"
+        },
+        {
+            "title": "DEV",
+            "url": "https://dev.to/santimenendez19",
+            "icon_svg": "dev.svg"
+        },
+        {
+            "title": "Portfolio",
+            "url": "https://santimenendez19.github.io/portfolio/",
+            "icon_svg": "portfolio.svg"
+        }
+    ]
+}

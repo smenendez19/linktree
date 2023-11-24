@@ -22,4 +22,4 @@ jobs:
         uses: fregante/setup-git-user@v2
       - run: |
             git add dist -f && git commit -m "Upload to gh-pages"
-            git push origin \`git subtree split --prefix dist main\`:gh-pages --force
+            git push origin `git subtree split --prefix dist main`:gh-pages --force

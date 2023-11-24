@@ -1,7 +1,12 @@
 <template>
-  <h1 class="links-title">
-    My links
-  </h1>
+  <section>
+    <h1 class="links-title">
+      My links
+    </h1>
+  </section>
+  <section>
+    <img class="avatar" src="../assets/avatar.png" />
+  </section>
   <section>
     <ul class="links-ul">
       <li v-for="link in links" class="links-item" :key="link.url">

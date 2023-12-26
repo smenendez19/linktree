@@ -5,7 +5,7 @@
     </h1>
   </section>
   <section>
-    <img class="avatar" src="../assets/avatar.png" />
+    <img class="avatar" alt="" src="../assets/avatar.png" />
   </section>
   <section>
     <ul class="links-ul">

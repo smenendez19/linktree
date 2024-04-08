@@ -2,18 +2,13 @@
     "links": [
         {
             "title": "Linkedin",
-            "url": "https://www.linkedin.com/in/menendezsantiago/",
+            "url": "https://www.linkedin.com/in/menendezsantiago",
             "icon_svg": "linkedin.svg"
         },
         {
             "title": "Instagram",
-            "url": "https://www.instagram.com/smenendez19/",
+            "url": "https://www.instagram.com/smenendez19",
             "icon_svg": "instagram.svg"
-        },
-        {
-            "title": "Twitter",
-            "url": "https://twitter.com/smenendez19",
-            "icon_svg": "twitter.svg"
         },
         {
             "title": "GitHub",
@@ -22,7 +17,7 @@
         },
         {
             "title": "LeetCode",
-            "url": "https://leetcode.com/smenendez/",
+            "url": "https://leetcode.com/smenendez",
             "icon_svg": "leetcode.svg"
         },
         {

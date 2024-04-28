@@ -2,7 +2,7 @@
     "links": [
         {
             "title": "Linkedin",
-            "url": "https://www.linkedin.com/in/menendezsantiago",
+            "url": "https://www.linkedin.com/in/smenendez19",
             "icon_svg": "linkedin.svg"
         },
         {
@@ -12,12 +12,12 @@
         },
         {
             "title": "GitHub",
-            "url": "https://github.com/SantiMenendez19",
+            "url": "https://github.com/smenendez19",
             "icon_svg": "github.svg"
         },
         {
             "title": "LeetCode",
-            "url": "https://leetcode.com/smenendez",
+            "url": "https://leetcode.com/smenendez19",
             "icon_svg": "leetcode.svg"
         },
         {
@@ -27,18 +27,23 @@
         },
         {
             "title": "Medium",
-            "url": "https://medium.com/@santiagomenendez",
+            "url": "https://medium.com/@smenendez19",
             "icon_svg": "medium.svg"
         },
         {
             "title": "DEV",
-            "url": "https://dev.to/santimenendez19",
+            "url": "https://dev.to/smenendez19",
             "icon_svg": "dev.svg"
         },
         {
             "title": "Portfolio",
-            "url": "https://santimenendez19.github.io/portfolio/",
+            "url": "https://smenendez19.github.io/portfolio",
             "icon_svg": "portfolio.svg"
+        },
+        {
+            "title": "X",
+            "url": "https://twitter.com/neoddev",
+            "icon_svg": "x.svg"
         }
     ]
 }

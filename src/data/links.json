@@ -39,11 +39,6 @@
             "title": "Portfolio",
             "url": "https://smenendez19.github.io/portfolio",
             "icon_svg": "portfolio.svg"
-        },
-        {
-            "title": "X",
-            "url": "https://twitter.com/neoddev",
-            "icon_svg": "x.svg"
         }
     ]
 }

@@ -1,11 +1,39 @@
+:root {
+    --mode-background: black;
+    --mode-borders: white;
+    --mode-text: black;
+    --mode-text-hover: white;
+    --mode-text-title: white;
+    --mode-card: white;
+    --mode-card-hover: white;
+    --mode-footer-text: white;
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
-    background-color: #000000;
+    background-color: var(--mode-background);
+    transition: none;
+}
+
+footer {
+    color: var(--mode-footer-text);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
 }
 
 .avatar {
     width: 50px;
     height: 50px;
-    background: #e8e8e8;
+    background: var(--mode-background);
     border-radius: 100%;
     margin: auto;
     justify-content: center;

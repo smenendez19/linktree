@@ -1,11 +1,15 @@
 <template>
-  <section>
+  <section class="links-title-container">
     <h1 class="links-title">
       My links
     </h1>
+    <button @click=changeDarkLightMode type="button" class="dark-mode-button">
+      <SVGIcon v-if="iconMode.value === 'moon'" class="svg-icon" name="moon" />
+      <SVGIcon v-if="iconMode.value === 'sun'" class="svg-icon" name="sun" />
+    </button>
   </section>
   <section>
-    <img class="avatar" alt="" src="../assets/avatar.png" />
+    <img class="avatar" alt="avatar" src="../assets/avatar.png" />
   </section>
   <section>
     <ul class="links-ul">
@@ -14,71 +18,79 @@
           <div class="card-container">
             <div class="card-text">{{ link.title }}</div>
             <div class="card-icon">
-              <img :src="getSVG(link.icon_svg)" alt="icon">
+              <SVGIcon class="svg-icon" :name=link.icon_svg />
             </div>
           </div>
         </a>
       </li>
     </ul>
   </section>
-  <footer>Santiago Menendez - 2023</footer>
+  <footer>Santiago Menendez - {{ date }}</footer>
 </template>
 
 <script setup>
-import data from '../data/links.json'
-import { ref } from 'vue'
+import data from "../data/links.json"
+import { ref, reactive, onBeforeMount } from "vue"
+import SVGIcon from "./SVGIcon.vue"
 
 const links = ref([...data.links])
+const date = new Date().getFullYear()
+const iconMode = reactive({
+  value: "sun"
+})
 
-function getSVG(url) {
-  const imageUrl = new URL(`../assets/svg/${url}`, import.meta.url).href
-  return imageUrl
+const changeDarkLightMode = async () => {
+  if (localStorage.getItem("theme") === "dark") {
+    lightMode()
+    iconMode.value = "moon"
+  }
+  else if (localStorage.getItem("theme") === "light") {
+    darkMode()
+    iconMode.value = "sun"
+  }
 }
+
+const lightMode = () => {
+  const root = document.querySelector(":root")
+  localStorage.setItem("theme", "light")
+  root.style.setProperty("--mode-background", "rgb(212, 183, 183)")
+  root.style.setProperty("--mode-borders", "black")
+  root.style.setProperty("--mode-text", "white")
+  root.style.setProperty("--mode-text-hover", "white")
+  root.style.setProperty("--mode-text-title", "black")
+  root.style.setProperty("--mode-card-background", "black")
+  root.style.setProperty("--mode-card-background-hover", "rgb(212, 183, 183)")
+  root.style.setProperty("--mode-footer-text", "black")
+}
+
+const darkMode = () => {
+  const root = document.querySelector(":root")
+  localStorage.setItem("theme", "dark")
+  root.style.setProperty("--mode-background", "black")
+  root.style.setProperty("--mode-borders", "white")
+  root.style.setProperty("--mode-text", "black")
+  root.style.setProperty("--mode-text-hover", "white")
+  root.style.setProperty("--mode-text-title", "white")
+  root.style.setProperty("--mode-card-background", "rgb(212, 183, 183)")
+  root.style.setProperty("--mode-card-background-hover", "black")
+  root.style.setProperty("--mode-footer-text", "white")
+}
+
+onBeforeMount(() => {
+  if (localStorage.getItem("theme") === null) {
+    localStorage.setItem("theme", "dark")
+  }
+
+  if (localStorage.getItem("theme") === "dark") {
+    darkMode()
+  }
+  else if (localStorage.getItem("theme") === "light") {
+    lightMode()
+  }
+})
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-}
-
-.links-title {
-  color: #ffffff;
-  text-align: center;
-  font-family: Arial, sans-serif;
-
-  padding: 0;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.links-ul {
-  list-style-type: none;
-
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.links-item {
-  margin: 5px;
-}
-
-footer {
-  color: #ffffff;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: Arial, sans-serif;
-
-  margin: 0;
-  padding: 0;
-  margin-top: 5px;
-}
-
 .debug {
   border: 1px solid red;
   border-color: red;

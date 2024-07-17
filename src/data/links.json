@@ -3,42 +3,42 @@
         {
             "title": "Linkedin",
             "url": "https://www.linkedin.com/in/smenendez19",
-            "icon_svg": "linkedin.svg"
+            "icon_svg": "linkedin"
         },
         {
             "title": "Instagram",
             "url": "https://www.instagram.com/smenendez19",
-            "icon_svg": "instagram.svg"
+            "icon_svg": "instagram"
         },
         {
             "title": "GitHub",
             "url": "https://github.com/smenendez19",
-            "icon_svg": "github.svg"
+            "icon_svg": "github"
         },
         {
             "title": "LeetCode",
             "url": "https://leetcode.com/smenendez19",
-            "icon_svg": "leetcode.svg"
+            "icon_svg": "leetcode"
         },
         {
             "title": "HackerRank",
             "url": "https://www.hackerrank.com/smenendez",
-            "icon_svg": "hackerrank.svg"
+            "icon_svg": "hackerrank"
         },
         {
             "title": "Medium",
             "url": "https://medium.com/@smenendez19",
-            "icon_svg": "medium.svg"
+            "icon_svg": "medium"
         },
         {
             "title": "DEV",
             "url": "https://dev.to/smenendez19",
-            "icon_svg": "dev.svg"
+            "icon_svg": "dev"
         },
         {
             "title": "Portfolio",
             "url": "https://smenendez19.github.io/portfolio",
-            "icon_svg": "portfolio.svg"
+            "icon_svg": "portfolio"
         }
     ]
 }

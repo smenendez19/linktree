@@ -36,7 +36,7 @@ import SVGIcon from "./SVGIcon.vue"
 const links = ref([...data.links])
 const date = new Date().getFullYear()
 const iconMode = reactive({
-  value: "sun"
+  value: localStorage.getItem("theme") === "dark" ? "sun" : "moon"
 })
 
 const changeDarkLightMode = async () => {

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3 - 21-07-2024
+
+- Add modals
+- Add CV
+- Add email
+- Fix light/dark mode svg
+- Changed colors
+
 ## 1.0.2 - 15-07-2024
 
 - Fix Readme

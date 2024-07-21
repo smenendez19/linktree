@@ -13,5 +13,4 @@ const props = defineProps({
 })
 
 const dynamicComponent = defineAsyncComponent(() => import(`../assets/svg/${props.name}.svg?component`));
-
 </script>

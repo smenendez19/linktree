@@ -1,12 +1,12 @@
 :root {
-    --mode-background: black;
-    --mode-borders: white;
-    --mode-text: black;
-    --mode-text-hover: white;
-    --mode-text-title: white;
-    --mode-card: white;
-    --mode-card-hover: white;
-    --mode-footer-text: white;
+    --mode-background: #0C1844;
+    --mode-borders: #FF6969;
+    --mode-text: #FFF5E1;
+    --mode-text-hover: #FFF5E1;
+    --mode-text-title: #FFF5E1;
+    --mode-card: #C80036;
+    --mode-card-hover: #C80036;
+    --mode-footer-text: #FFF5E1;
 }
 
 a {
@@ -39,4 +39,11 @@ footer {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.embed {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }

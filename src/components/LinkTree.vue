@@ -1,6 +1,6 @@
 <template>
   <section>
-    <button @click=changeDarkLightMode type="button" class="dark-mode-button">
+    <button @click="changeDarkLightMode" type="button" class="dark-mode-button">
       <SVGIcon v-if="iconMode.value === 'moon'" class="svg-icon" name="moon" />
       <SVGIcon v-if="iconMode.value === 'sun'" class="svg-icon" name="sun" />
     </button>
@@ -11,25 +11,14 @@
   </section>
 
   <section class="links-title-container">
-    <h1 class="links-title">
-      Santiago Menendez
-    </h1>
+    <h1 class="links-title">Santiago Menendez</h1>
+    <h2 class="links-subtitle">Software Developer</h2>
   </section>
 
   <section>
     <ul class="links-ul">
-      <li v-for="link in links" class="links-item" :key="link.url">
-        <a class="card" :href="link.url" target="_blank">
-          <div class="card-container">
-            <div class="card-text">{{ link.title }}</div>
-            <div class="card-icon">
-              <SVGIcon class="svg-icon" :name=link.icon_svg />
-            </div>
-          </div>
-        </a>
-      </li>
       <li class="links-item" key="email">
-        <div class="card" @click="showEmailModal" style="cursor:pointer ">
+        <div class="card" @click="showEmailModal" style="cursor: pointer">
           <div class="card-container">
             <div class="card-text">Email</div>
             <div class="card-icon">
@@ -39,7 +28,12 @@
         </div>
       </li>
       <li class="links-item" key="cv">
-        <div class="card" @click="showPDFModal" style="cursor:pointer ">
+        <div
+          v-if="!isMobile"
+          class="card"
+          @click="showPDFModalDesktop"
+          style="cursor: pointer"
+        >
           <div class="card-container">
             <div class="card-text">CV</div>
             <div class="card-icon">
@@ -47,6 +41,24 @@
             </div>
           </div>
         </div>
+        <a v-if="isMobile" class="card" :href="cvFile" target="_blank">
+          <div class="card-container">
+            <div class="card-text">CV</div>
+            <div class="card-icon">
+              <SVGIcon class="svg-icon" name="cv" />
+            </div>
+          </div>
+        </a>
+      </li>
+      <li v-for="link in links" class="links-item" :key="link.url">
+        <a class="card" :href="link.url" target="_blank">
+          <div class="card-container">
+            <div class="card-text">{{ link.title }}</div>
+            <div class="card-icon">
+              <SVGIcon class="svg-icon" :name="link.icon_svg" />
+            </div>
+          </div>
+        </a>
       </li>
     </ul>
   </section>
@@ -69,11 +81,27 @@
 
   <Modal v-show="isModalEmailVisible">
     <template v-slot:body>
-      <span class="links-title"><strong>santiagomenendez@outlook.com</strong></span>
+      <button
+        class="card tooltip-container"
+        @click="copyEmail"
+        style="cursor: pointer; overflow: visible; animation: none"
+      >
+        <span class="tooltip">{{ copyText }}</span>
+        <div class="card-container">
+          <div class="card-text">santiagomenendez@outlook.com</div>
+          <div class="card-icon">
+            <SVGIcon class="svg-icon" name="copy" />
+          </div>
+        </div>
+      </button>
     </template>
     <template v-slot:buttons>
       <div>
-        <button type="button" class="btn-color btn-close-email" @click="closeEmailModal">
+        <button
+          type="button"
+          class="btn-color btn-close-email"
+          @click="closeEmailModal"
+        >
           Close
         </button>
       </div>
@@ -86,102 +114,108 @@
 </template>
 
 <script setup>
-import data from "@/data/links.json"
-import { ref, reactive, onBeforeMount } from "vue"
-import SVGIcon from "./SVGIcon.vue"
-
-import Modal from '@/components/Modal.vue';
+import data from "@/data/links.json";
+import { ref, reactive, onBeforeMount } from "vue";
+import SVGIcon from "./SVGIcon.vue";
+import Modal from "@/components/modal/ModalTemplate.vue";
 
 // LocalStorage
 if (localStorage.getItem("theme") === null) {
-  localStorage.setItem("theme", "dark")
+  localStorage.setItem("theme", "dark");
 }
 
 // Refs
-const links = ref([...data.links])
-const date = new Date().getFullYear()
+const links = ref([...data.links]);
+const date = new Date().getFullYear();
 const iconMode = reactive({
-  value: localStorage.getItem("theme") === "dark" ? "sun" : "moon"
-})
-const cvFile = ref("files/cv.pdf")
+  value: localStorage.getItem("theme") === "dark" ? "sun" : "moon",
+});
+const cvFile = ref("files/cv.pdf");
+const isMobile = ref(window.screen.width <= 760);
+const copyText = ref("Copy to clipboard");
 
 // Modal
-const isModalPDFVisible = ref(false)
-const isModalEmailVisible = ref(false)
+const isModalPDFVisible = ref(false);
+const isModalEmailVisible = ref(false);
 
-const showPDFModal = () => {
-  isModalPDFVisible.value = true
-}
+const copyEmail = () => {
+  navigator.clipboard.writeText("santiagomenendez@outlook.com");
+  copyText.value = "Copied!";
+};
+
+const showPDFModalDesktop = () => {
+  isModalPDFVisible.value = true;
+};
 const closePDFModal = () => {
-  isModalPDFVisible.value = false
-}
+  isModalPDFVisible.value = false;
+};
 
 const showEmailModal = () => {
-  isModalEmailVisible.value = true
-}
+  isModalEmailVisible.value = true;
+};
 
 const closeEmailModal = () => {
-  isModalEmailVisible.value = false
-}
+  isModalEmailVisible.value = false;
+  copyText.value = "Copy to clipboard";
+};
 
+// Files
 const downloadFile = () => {
-  const link = document.createElement("a")
-  link.href = cvFile.value
-  link.download = cvFile.value.split("/").pop()
-  link.click()
-}
+  const link = document.createElement("a");
+  link.href = cvFile.value;
+  link.download = cvFile.value.split("/").pop();
+  link.click();
+};
 
 // Dark/Light mode
 const changeDarkLightMode = async () => {
   if (localStorage.getItem("theme") === "dark") {
-    lightMode()
-    iconMode.value = "moon"
+    lightMode();
+    iconMode.value = "moon";
+  } else if (localStorage.getItem("theme") === "light") {
+    darkMode();
+    iconMode.value = "sun";
   }
-  else if (localStorage.getItem("theme") === "light") {
-    darkMode()
-    iconMode.value = "sun"
-  }
-}
+};
 
 const lightMode = () => {
-  const root = document.querySelector(":root")
-  localStorage.setItem("theme", "light")
-  root.style.setProperty("--mode-background", "#FEFBD8")
-  root.style.setProperty("--mode-borders", "#BB9AB1")
-  root.style.setProperty("--mode-text", "#EECEB9")
-  root.style.setProperty("--mode-text-hover", "#987D9A")
-  root.style.setProperty("--mode-text-title", "#987D9A")
-  root.style.setProperty("--mode-card-background", "#987D9A")
-  root.style.setProperty("--mode-card-background-hover", "#EECEB9")
-  root.style.setProperty("--mode-footer-text", "#987D9A")
-}
+  const root = document.querySelector(":root");
+  localStorage.setItem("theme", "light");
+  root.style.setProperty("--mode-background", "#FEFBD8");
+  root.style.setProperty("--mode-borders", "#BB9AB1");
+  root.style.setProperty("--mode-text", "#EECEB9");
+  root.style.setProperty("--mode-text-hover", "#987D9A");
+  root.style.setProperty("--mode-text-title", "#987D9A");
+  root.style.setProperty("--mode-card-background", "#987D9A");
+  root.style.setProperty("--mode-card-background-hover", "#EECEB9");
+  root.style.setProperty("--mode-footer-text", "#987D9A");
+};
 
 const darkMode = () => {
-  const root = document.querySelector(":root")
-  localStorage.setItem("theme", "dark")
-  root.style.setProperty("--mode-background", "#0C1844")
-  root.style.setProperty("--mode-borders", "#FF6969")
-  root.style.setProperty("--mode-text", "#FFF5E1")
-  root.style.setProperty("--mode-text-hover", "#FFF5E1")
-  root.style.setProperty("--mode-text-title", "#FFF5E1")
-  root.style.setProperty("--mode-card-background", "#C80036")
-  root.style.setProperty("--mode-card-background-hover", "#0C1844")
-  root.style.setProperty("--mode-footer-text", "#FFF5E1")
-}
+  const root = document.querySelector(":root");
+  localStorage.setItem("theme", "dark");
+  root.style.setProperty("--mode-background", "#0C1844");
+  root.style.setProperty("--mode-borders", "#FF6969");
+  root.style.setProperty("--mode-text", "#FFF5E1");
+  root.style.setProperty("--mode-text-hover", "#FFF5E1");
+  root.style.setProperty("--mode-text-title", "#FFF5E1");
+  root.style.setProperty("--mode-card-background", "#C80036");
+  root.style.setProperty("--mode-card-background-hover", "#0C1844");
+  root.style.setProperty("--mode-footer-text", "#FFF5E1");
+};
 
 // Lifecycle
 onBeforeMount(() => {
   if (localStorage.getItem("theme") === null) {
-    localStorage.setItem("theme", "dark")
+    localStorage.setItem("theme", "dark");
   }
 
   if (localStorage.getItem("theme") === "dark") {
-    darkMode()
+    darkMode();
+  } else if (localStorage.getItem("theme") === "light") {
+    lightMode();
   }
-  else if (localStorage.getItem("theme") === "light") {
-    lightMode()
-  }
-})
+});
 </script>
 
 <style scoped>

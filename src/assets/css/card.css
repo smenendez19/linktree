@@ -1,61 +1,111 @@
 .card {
-    box-sizing: border-box;
-    width: 350px;
-    height: 45px;
-    background: var(--mode-card-background);
-    border: 1px solid var(--mode-borders);
-    backdrop-filter: blur(6px);
-    border-radius: 15px;
-    transition: all 0.5s ease;
+  box-sizing: border-box;
+  width: 350px;
+  height: 45px;
+  background: var(--mode-card-background);
+  border: 1px solid var(--mode-borders);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  transition: all 0.5s ease;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    overflow: hidden;
+  overflow: hidden;
+
+  animation: start 1s linear 0s 1 normal forwards;
 }
 
 .card-container {
-    position: relative;
-    width: 100%;
-    height: 50%;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.card-overflow {
+  overflow: hidden;
 }
 
 .card-text {
-    position: absolute;
-    color: var(--mode-text);
-    font-size: 15px;
-    font-weight: bolder;
-    font-family: Arial, sans-serif;
+  position: absolute;
+  color: var(--mode-text);
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: Arial, sans-serif;
 
-    left: 5%;
-    top: 20%;
-
+  left: 5%;
+  top: 20%;
 }
 
 .card-icon {
-    position: absolute;
-    width: 45px;
-    opacity: 0;
+  position: absolute;
+  width: 45px;
+  opacity: 0;
 
-    top: 100%;
-    right: 10%;
-
+  top: 100%;
+  right: 5%;
 }
 
 .card:hover .card-icon {
-    width: 45px;
-    height: 45px;
-    opacity: 1;
-    transition: 0.5s;
-    transform: translateY(-75%);
+  width: 45px;
+  height: 45px;
+  opacity: 1;
+  transition: 0.5s;
+  transform: translateY(-75%);
 }
 
 .card:hover {
-    border: 1px solid var(--mode-borders);
-    background: var(--mode-card-background-hover);
+  border: 1px solid var(--mode-borders);
+  background: var(--mode-card-background-hover);
 }
 
 .card:hover .card-text {
-    color: var(--mode-text-hover);
+  color: var(--mode-text-hover);
+}
+
+@keyframes start {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(45px);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+    transform: translateY(24px);
+  }
+
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(12px);
+  }
+
+  82% {
+    animation-timing-function: ease-in;
+    transform: translateY(6px);
+  }
+
+  93% {
+    animation-timing-function: ease-in;
+    transform: translateY(4px);
+  }
+
+  25%,
+  55%,
+  75%,
+  87% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

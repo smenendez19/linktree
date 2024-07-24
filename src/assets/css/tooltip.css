@@ -1,0 +1,46 @@
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  overflow: visible;
+}
+
+.tooltip {
+  --background-tooltip: var(--mode-card-background);
+  --color-tooltip: var(--mode-text);
+  position: absolute;
+  top: -39px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  background: var(--background-tooltip);
+  color: var(--color-tooltip);
+  border-radius: 5px;
+  min-width: 100px;
+  height: 15px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  bottom: -0.2em;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  background: var(
+    --background-tooltip
+  );
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}

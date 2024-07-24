@@ -1,49 +1,49 @@
 :root {
-    --mode-background: #0C1844;
-    --mode-borders: #FF6969;
-    --mode-text: #FFF5E1;
-    --mode-text-hover: #FFF5E1;
-    --mode-text-title: #FFF5E1;
-    --mode-card: #C80036;
-    --mode-card-hover: #C80036;
-    --mode-footer-text: #FFF5E1;
+  --mode-background: #0c1844;
+  --mode-borders: #ff6969;
+  --mode-text: #fff5e1;
+  --mode-text-hover: #fff5e1;
+  --mode-text-title: #fff5e1;
+  --mode-card: #c80036;
+  --mode-card-hover: #c80036;
+  --mode-footer-text: #fff5e1;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    background-color: var(--mode-background);
-    transition: none;
+  background-color: var(--mode-background);
+  transition: none;
 }
 
 footer {
-    color: var(--mode-footer-text);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
+  color: var(--mode-footer-text);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
 
-    margin: 0;
-    padding: 0;
-    margin-top: 5px;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
-    background: var(--mode-background);
-    border-radius: 100%;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+  width: 50px;
+  height: 50px;
+  background: var(--mode-background);
+  border-radius: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .embed {
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }

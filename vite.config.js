@@ -1,17 +1,15 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
-import { hash } from './src/utils/functions.js'
-import { compression } from 'vite-plugin-compression2'
-import svgLoader from 'vite-svg-loader'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+import { hash } from "./src/utils/functions.js";
+import svgLoader from "vite-svg-loader";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/linktree/",
   plugins: [
     vue(),
-    svgLoader(),
-    compression()
+    svgLoader()
   ],
   server: {
     host: "0.0.0.0",
@@ -19,7 +17,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      // eslint-disable-next-line no-undef
+      "@": resolve(__dirname, "./src"),
     },
   },
   build: {
@@ -27,8 +26,8 @@ export default defineConfig({
       output: {
         entryFileNames: `[name]` + hash + `.js`,
         chunkFileNames: `[name]` + hash + `.js`,
-        assetFileNames: `[name]` + hash + `.[ext]`
-      }
-    }
-  }
-})
+        assetFileNames: `[name]` + hash + `.[ext]`,
+      },
+    },
+  },
+});

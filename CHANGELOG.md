@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.4 - 24-07-2024
+
+- Fix modal for mobile browsers.
+- CV in mobile browers only open new page and download from these.
+- Email has a copy button.
+- Add sub-title position.
+- Add transitions.
+- Fix meta og and add cache-control.
+- Remove vite compression because its not necesary.
+- Add prettier and eslint to format and lint code.
+- Add some transitions and animations.
+- Add tooltips for email.
+
 ## 1.0.3 - 21-07-2024
 
 - Add modals

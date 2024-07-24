@@ -1,16 +1,16 @@
 .dark-mode-button {
-    position: absolute;
-    right: 0%;
-    width: 45px;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
+  position: absolute;
+  right: 0%;
+  width: 45px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .dark-mode-button:hover:focus {
-    color: var(--light);
-    background: var(--dark);
+  color: var(--light);
+  background: var(--dark);
 
-    transition: 0.3s;
-    transform: translateY(-5%);
+  transition: 0.3s;
+  transform: translateY(-5%);
 }

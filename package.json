@@ -1,7 +1,7 @@
 {
   "name": "linktree-clone",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.4.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4.1 09-08-2024
+
+- Removed initial animation
+- Updated cv
+
 ## 1.0.4 - 24-07-2024
 
 - Fix modal for mobile browsers.

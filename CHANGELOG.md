@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5 27-12-2024
+
+- Updated links
+- Updated node modules
+
 ## 1.0.4.1 09-08-2024
 
 - Removed initial animation

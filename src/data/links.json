@@ -11,9 +11,19 @@
             "icon_svg": "instagram"
         },
         {
+            "title": "X",
+            "url": "https://x.com/santimenendez19",
+            "icon_svg": "x"
+        },
+        {
             "title": "GitHub",
             "url": "https://github.com/smenendez19",
             "icon_svg": "github"
+        },
+        {
+            "title": "Portfolio",
+            "url": "https://smenendez19.github.io/portfolio",
+            "icon_svg": "portfolio"
         },
         {
             "title": "LeetCode",
@@ -34,11 +44,6 @@
             "title": "DEV",
             "url": "https://dev.to/smenendez19",
             "icon_svg": "dev"
-        },
-        {
-            "title": "Portfolio",
-            "url": "https://smenendez19.github.io/portfolio",
-            "icon_svg": "portfolio"
         }
     ]
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 11-04-2025
+
+- Updated photo
+- Updated position
+
 ## 1.0.5 27-12-2024
 
 - Updated links

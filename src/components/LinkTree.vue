@@ -7,12 +7,12 @@
   </section>
 
   <section>
-    <img class="avatar" alt="avatar" src="../assets/avatar.png" />
+    <img class="avatar" alt="avatar" src="../assets/avatar.jpg" />
   </section>
 
   <section class="links-title-container">
     <h1 class="links-title">Santiago Menendez</h1>
-    <h2 class="links-subtitle">Software Developer</h2>
+    <h2 class="links-subtitle">Software Engineer</h2>
   </section>
 
   <section>

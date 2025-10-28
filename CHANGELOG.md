@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.7 28-10-2025
+
+- Updated node modules.
+- Updated cv file.
+
 ## 1.0.6 11-04-2025
 
 - Updated photo

@@ -1,7 +1,7 @@
 {
   "name": "linktree-clone",
   "private": true,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,16 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.22"
+    "vue": "^3.5.34"
   },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "eslint": "^9.38.0",
-    "eslint-plugin-vue": "^9.33.0",
-    "globals": "^16.4.0",
-    "prettier": "3.6.2",
-    "vite": "^7.1.12",
-    "vite-svg-loader": "^5.1.0"
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "eslint": "^10.3.0",
+    "eslint-plugin-vue": "^10.9.1",
+    "globals": "^17.6.0",
+    "prettier": "3.8.3",
+    "vite": "^8.0.12",
+    "vite-svg-loader": "^5.1.1"
   }
 }

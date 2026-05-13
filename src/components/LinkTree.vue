@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <a v-if="isMobile" class="card" :href="cvFile" target="_blank">
+        <a v-if="isMobile" class="card" :href="cvDriveViewUrl" target="_blank">
           <div class="card-container">
             <div class="card-text">CV</div>
             <div class="card-icon">
@@ -65,7 +65,7 @@
 
   <Modal v-show="isModalPDFVisible">
     <template v-slot:body>
-      <embed :src="cvFile" width="1000px" height="500px" />
+      <embed :src="cvDrivePreviewUrl" width="1000px" height="500px" />
     </template>
     <template v-slot:buttons>
       <div>
@@ -130,7 +130,10 @@ const date = new Date().getFullYear();
 const iconMode = reactive({
   value: localStorage.getItem("theme") === "dark" ? "sun" : "moon",
 });
-const cvFile = ref("files/cv.pdf");
+const cvDriveFileId = "1Om2tL7OarLr8qUBcUm1ArJgoKb294W-Q";
+const cvDriveViewUrl = `https://drive.google.com/file/d/${cvDriveFileId}/view`;
+const cvDrivePreviewUrl = `https://drive.google.com/file/d/${cvDriveFileId}/preview`;
+const cvDriveDownloadUrl = `https://drive.google.com/uc?export=download&id=${cvDriveFileId}`;
 const isMobile = ref(window.screen.width <= 760);
 const copyText = ref("Copy to clipboard");
 
@@ -162,8 +165,7 @@ const closeEmailModal = () => {
 // Files
 const downloadFile = () => {
   const link = document.createElement("a");
-  link.href = cvFile.value;
-  link.download = cvFile.value.split("/").pop();
+  link.href = cvDriveDownloadUrl;
   link.click();
 };
 
